@@ -1,0 +1,5 @@
+wpilib==2025.3.2.2
+robotpy==2025.3.2.2
+robotpy-wpimath==2025.3.2.2
+rev==0.1.1
+pyfrc==2025.1.0
