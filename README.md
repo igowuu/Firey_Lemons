@@ -1,4 +1,4 @@
-**Swervebot**.
+# Swervebot
 
 ## SwerveGEARious Hardware:
 - 4 Falcon swerve modules (CANCoder steering sensors) (✓)
