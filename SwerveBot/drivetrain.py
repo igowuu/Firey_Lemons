@@ -8,7 +8,7 @@ MAX_SPEED = 3.0  # meters / sec
 MAX_ANGULAR_SPEED = math.pi  # rot / sec
 
 class Drivetrain:
-    """Motor initialization """
+    """Motor initialization, gyro, and odometry logic"""
     def __init__(self) -> None:
         self.frontLeftLocation = wpimath.geometry.Translation2d(0.381, 0.381)
         self.frontRightLocation = wpimath.geometry.Translation2d(0.381, -0.381)
@@ -88,4 +88,5 @@ class Drivetrain:
                 self.backLeft.getPosition(),
                 self.backRight.getPosition(),
             ),
+
         )
