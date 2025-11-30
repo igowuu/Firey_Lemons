@@ -1,5 +1,3 @@
-# REMEMBER TO USE XBOXCONTROLLER BEFORE PUTTING ON GIT!!!
-
 import wpilib
 import wpimath
 import wpimath.filter
@@ -51,4 +49,5 @@ class MyRobot(wpilib.TimedRobot):
             * self.drivetrain.MAX_ANGULAR_SPEED
         )
         
+
         self.drivetrain.drive(self.xSpeed, self.ySpeed, self.rot, fieldRelative, self.getPeriod())
