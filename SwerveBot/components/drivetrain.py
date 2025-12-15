@@ -107,6 +107,12 @@ class DriveTrain:
         if self.lstick.getRawButtonPressed(1):
             self.reset_odometry()
 
+        if self.lstick.getRawButtonPressed(2):
+            self.field_oriented = not self.field_oriented
+
+        if self.lstick.getRawButtonPressed(3):
+            self.gyro.reset()
+
         self.xSpeed = (
             self.xspeedLimiter.calculate(
                 wpimath.applyDeadband(self.lstick.getX(), 0.02)
@@ -125,4 +131,5 @@ class DriveTrain:
             ) * MAX_OMEGA_PS
         )
         
+
         self.drive(self.xSpeed, self.ySpeed, self.omega)
