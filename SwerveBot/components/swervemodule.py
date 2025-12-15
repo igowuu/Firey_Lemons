@@ -56,6 +56,9 @@ class SwerveModule:
         desired_state.optimize(current_angle)
 
         desired_speed_mps = desired_state.speed
+        
+        if abs(desired_speed_mps) < 0.01:
+            return
 
         ff_voltage = self.drive_ff.calculate(desired_speed_mps)
 
@@ -71,5 +74,6 @@ class SwerveModule:
         total_voltage = ff_voltage + pid_voltage
         total_voltage = self._clamp(total_voltage, -MAX_VOLTAGE, MAX_VOLTAGE)
         self.drive_motor.setVoltage(total_voltage)
+
 
         self._apply_steer_control(desired_state.angle.radians())
